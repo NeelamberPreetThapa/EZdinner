@@ -3,104 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURELIA | Fine Dining Experience</title>
+    <title>VELVET TABLE | Elite Dining Reservations</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav id="navbar">
-        <div class="logo">AURELIA</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#story">Our Story</a></li>
-            <li><a href="#reservation" class="btn-reserve">Book a Table</a></li>
-        </ul>
-        <div class="hamburger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
+        <div class="logo">VELVET TABLE</div>
+        <div class="nav-links">
+            <a href="#">Concierge</a>
+            <a href="#">Locations</a>
+            <a href="#" class="login-btn">Sign In</a>
         </div>
     </nav>
 
-    <header id="home" class="hero">
-        <div class="hero-content">
-            <span class="subtitle">The Art of Dining</span>
-            <h1>Taste the <br> <strong>Extraordinary</strong></h1>
-            <p>Experience world-class gastronomy in the heart of the city.</p>
-            <a href="#reservation" class="cta-button">Reserve Your Experience</a>
+    <header class="hero">
+        <video autoplay muted loop playsinline class="back-video">
+            <source src="https://videos.pexels.com/video-files/3196232/3196232-hd_1920_1080_25fps.mp4" type="video/mp4">
+        </video>
+        
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content fade-in">
+            <h1>Access the Unattainable</h1>
+            <p>Exclusive reservations at the world's most coveted tables.</p>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Restaurant, Cuisine, or Chef">
+                <input type="text" placeholder="Location (e.g., London, Dubai)">
+                <button class="search-btn">Find Table</button>
+            </div>
         </div>
     </header>
 
-    <section id="story" class="section-padding">
-        <div class="container split-layout">
-            <div class="text-content fade-in">
-                <span class="section-subtitle">Since 1988</span>
-                <h2>Culinary <br>Heritage</h2>
-                <p>At Aurelia, we believe that food is more than sustenance—it is an emotion. Our chefs curate ingredients from the finest vineyards and farms globally to present you with a symphony of flavors.</p>
-                <p>Designed for those who appreciate the finer details of life.</p>
+    <section class="listings section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="gold-text">Curated Selection</span>
+                <h2>Michelin Star Collection</h2>
             </div>
-            <div class="image-content fade-in">
-                <div class="image-box">
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop" alt="Restaurant Interior">
+
+            <div class="grid-container">
+                <div class="card fade-in">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?q=80&w=2070&auto=format&fit=crop');">
+                        <span class="tag">French</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>Le Lumière</h3>
+                        <p class="location">Paris, France</p>
+                        <p class="desc">A 3-star sensory journey by Chef Jean-Pierre.</p>
+                        <div class="card-footer">
+                            <span class="price">$$$$</span>
+                            <button class="book-btn" onclick="openModal('Le Lumière')">Book Table</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop');">
+                        <span class="tag">Japanese</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>Kuro Sakurā</h3>
+                        <p class="location">Tokyo, Ginza</p>
+                        <p class="desc">Omakase experience with rare ingredients.</p>
+                        <div class="card-footer">
+                            <span class="price">$$$$$</span>
+                            <button class="book-btn" onclick="openModal('Kuro Sakurā')">Book Table</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070&auto=format&fit=crop');">
+                        <span class="tag">Fusion</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>The Obsidian</h3>
+                        <p class="location">New York, Manhattan</p>
+                        <p class="desc">Where modern art meets culinary precision.</p>
+                        <div class="card-footer">
+                            <span class="price">$$$$</span>
+                            <button class="book-btn" onclick="openModal('The Obsidian')">Book Table</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="reservation" class="reservation-section">
-        <div class="overlay"></div>
-        <div class="container form-container fade-in">
-            <span class="section-subtitle" style="color: var(--gold);">Reservations</span>
-            <h2>Secure Your Table</h2>
-            <form id="bookingForm">
-                <div class="form-grid">
-                    <div class="input-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" placeholder="John Doe" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" placeholder="+1 (555) 000-0000" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="date">Date</label>
-                        <input type="date" id="date" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="guests">Guests</label>
-                        <select id="guests">
-                            <option value="1">1 Person</option>
-                            <option value="2" selected>2 People</option>
-                            <option value="3">3 People</option>
-                            <option value="4">4 People</option>
-                            <option value="5+">5+ (Large Group)</option>
-                        </select>
-                    </div>
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle">Confirm Reservation</h3>
+            <p class="modal-subtitle">You are booking a table at <span id="selectedRestaurant" class="gold-text"></span></p>
+            
+            <form id="reservationForm">
+                <input type="date" required>
+                <select>
+                    <option>19:00 - Standard</option>
+                    <option>20:00 - Prime Time</option>
+                    <option>21:00 - Late Dining</option>
+                </select>
+                <input type="number" placeholder="Guests" min="1" max="10">
+                
+                <div class="coupon-section">
+                    <input type="text" id="couponInput" placeholder="Enter Coupon Code">
+                    <button type="button" class="apply-btn" onclick="applyCoupon()">Apply</button>
                 </div>
-                <div class="input-group full-width">
-                    <label for="requests">Special Requests</label>
-                    <textarea id="requests" rows="2" placeholder="Allergies, Anniversary, etc."></textarea>
+                <p id="couponMessage"></p>
+
+                <div class="total-preview">
+                    <span>Reservation Deposit</span>
+                    <span id="priceDisplay">$100.00</span>
                 </div>
-                <button type="submit" class="submit-btn">Confirm Reservation</button>
+
+                <button type="submit" class="confirm-btn">Complete Reservation</button>
             </form>
         </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <h3>AURELIA</h3>
-            <p>123 Luxury Avenue, Kensington, London</p>
-            <p>+44 20 7946 0000</p>
-            <div class="socials">
-                <span>Instagram</span> | <span>Twitter</span> | <span>Facebook</span>
-            </div>
-            <p class="copyright">&copy; 2026 Aurelia Restaurant Group. All rights reserved.</p>
-        </div>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
