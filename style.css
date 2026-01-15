@@ -1,0 +1,311 @@
+/* --- Variables & Reset --- */
+:root {
+    --bg-color: #0b0b0b;
+    --text-color: #f0f0f0;
+    --gold: #D4AF37; /* The Premium Gold Color */
+    --gold-hover: #b5952f;
+    --dark-grey: #1a1a1a;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Typography --- */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+strong {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.section-subtitle {
+    display: block;
+    color: var(--gold);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+/* --- Navigation --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease, padding 0.3s ease;
+}
+
+nav.scrolled {
+    background: rgba(11, 11, 11, 0.95);
+    padding: 1rem 5%;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.btn-reserve {
+    border: 1px solid var(--gold);
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-reserve:hover {
+    background-color: var(--gold);
+    color: var(--bg-color);
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background-color: var(--gold);
+    color: var(--bg-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--gold-hover);
+    transform: translateY(-3px);
+}
+
+/* --- Sections General --- */
+.section-padding {
+    padding: 6rem 5%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Story Section --- */
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.split-layout h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.split-layout p {
+    margin-bottom: 1.5rem;
+    color: #aaa;
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    filter: sepia(20%) contrast(1.1);
+    box-shadow: 20px 20px 0px rgba(212, 175, 55, 0.1); /* Subtle gold shadow */
+}
+
+/* --- Reservation Form --- */
+.reservation-section {
+    position: relative;
+    padding: 8rem 2rem;
+    background: var(--dark-grey);
+    text-align: center;
+}
+
+.form-container {
+    max-width: 800px;
+}
+
+.form-container h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    text-align: left;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    color: var(--gold);
+}
+
+input, select, textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #444;
+    padding: 10px 0;
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-bottom: 1px solid var(--gold);
+}
+
+select option {
+    background: var(--bg-color);
+}
+
+.submit-btn {
+    margin-top: 2rem;
+    padding: 1rem 4rem;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: var(--font-body);
+}
+
+.submit-btn:hover {
+    background: var(--gold);
+    color: var(--bg-color);
+}
+
+/* --- Footer --- */
+footer {
+    padding: 4rem 2rem;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+footer h3 {
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
+}
+
+.socials {
+    margin: 1.5rem 0;
+    color: #666;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.copyright {
+    font-size: 0.7rem;
+    color: #444;
+}
+
+/* --- Animations --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 3rem; }
+    .split-layout { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .form-grid { grid-template-columns: 1fr; }
+    .full-width { grid-column: span 1; }
+}
